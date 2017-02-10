@@ -12,3 +12,10 @@ Capybara::Webkit.configure do |config|
 end
 
 $driver = Capybara::Session.new(:selenium)
+
+feature 'Navigating to ESPN' do
+    scenario "Verify the correct page is loaded" do
+        $driver.visit "http://www.espn.com"
+        $driver.has_title? "ESPN: The Worldwide Leader in Sports"
+    end
+end
