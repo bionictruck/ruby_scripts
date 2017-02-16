@@ -3,9 +3,10 @@ require 'capybara'
 require 'capybara-webkit'
 require 'selenium-webdriver'
 require 'capybara/rspec'
+require 'capybara/poltergeist'
 
 Capybara.default_driver = :selenium
-Capybara.javascript_driver = :webkit
+Capybara.javascript_driver = :poltergeist
 
 Capybara::Webkit.configure do |config|
     config.allow_url("")
