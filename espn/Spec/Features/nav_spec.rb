@@ -5,10 +5,10 @@ require 'selenium-webdriver'
 require './spec_helper.rb'
 
 feature "Navigate through top level links" do
-    # scenario "Click on NFL link and verify correct page loads" do
-    #     $driver.click_link("NFL", :match => :first)
-    #     $driver.should have_title "NFL Football Teams, Scores, Stats, News, Standings, Rumors - National Football League - ESPN"
-    # end
+    scenario "Click on NFL link and verify correct page loads" do
+        $driver.click_link("NFL", :match => :first)
+        $driver.should have_title "NFL Football Teams, Scores, Stats, News, Standings, Rumors - National Football League - ESPN"
+    end
     # scenario "Click on NBA link and verify correct page loads" do
     #     $driver.click_link("NBA", :match => :first)
     #     $driver.should have_title "NBA - National Basketball Association Teams, Scores, Stats, News, Standings, Rumors - ESPN"        
@@ -31,7 +31,7 @@ feature "Navigate through top level links" do
     # end
 
     scenario "Click on NCAAM link and verify correct page loads" do
-        $driver.click_link("NCAAM")
+        $driver.find_all("NCAAM")[1].click
         $driver.should have_title "NCAA - Men's College Basketball Teams, Scores, Stats, News, Standings, Rumors - ESPN"
     end
     # scenario "Click on Golf link and verify correct page loads" do
