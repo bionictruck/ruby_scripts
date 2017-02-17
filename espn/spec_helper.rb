@@ -3,16 +3,15 @@ require 'capybara'
 require 'capybara-webkit'
 require 'selenium-webdriver'
 require 'capybara/rspec'
-require 'capybara/poltergeist'
-
-Capybara.default_driver = :selenium
-Capybara.javascript_driver = :poltergeist
-
-Capybara::Webkit.configure do |config|
-    config.allow_url("")
-end
 
 $driver = Capybara::Session.new(:selenium)
+
+Capybara.default_driver = :selenium
+Capybara.javascript_driver = :webkit
+
+Capybara::Webkit.configure do |config|
+    config.allow_url("")  
+end
 
 feature 'Navigating to ESPN' do
     scenario "Verify the correct page is loaded" do
